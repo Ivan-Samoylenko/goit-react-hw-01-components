@@ -1,26 +1,29 @@
 import PropTypes from 'prop-types';
-import css from './Statistics.module.css';
+import {
+  StatisticsSection,
+  Title,
+  StatList,
+  StatListItem,
+  Label,
+  Percentage,
+} from './Statistics.styled';
 
 const Statistics = ({ data, title }) => {
   return (
-    <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+    <StatisticsSection>
+      <Title>{title}</Title>
 
-      <ul className={css['stat-list']}>
+      <StatList>
         {data.map(dataItem => {
           return (
-            <li
-              className={css.item}
-              key={dataItem.id}
-              style={{ backgroundColor: getBgColor() }}
-            >
-              <span className={css.label}>{dataItem.label}</span>
-              <span className={css.percentage}>{dataItem.percentage}%</span>
-            </li>
+            <StatListItem key={dataItem.id} label={dataItem.label}>
+              <Label>{dataItem.label}</Label>
+              <Percentage>{dataItem.percentage}%</Percentage>
+            </StatListItem>
           );
         })}
-      </ul>
-    </section>
+      </StatList>
+    </StatisticsSection>
   );
 };
 
@@ -34,11 +37,5 @@ Statistics.propTypes = {
   ),
   title: PropTypes.string,
 };
-
-function getBgColor() {
-  return `rgb(${50 + Math.floor(Math.random() * 91)}, ${
-    50 + Math.floor(Math.random() * 91)
-  }, ${50 + Math.floor(Math.random() * 91)})`;
-}
 
 export default Statistics;

@@ -1,4 +1,6 @@
-.profile {
+import styled from 'styled-components';
+
+export const ProfileCard = styled.div`
   width: 240px;
   margin-top: 20px;
   margin-right: auto;
@@ -11,9 +13,9 @@
 
   background-color: #c5fb73;
   border-radius: 10px;
-}
+`;
 
-.description {
+export const Description = styled.div`
   padding-top: 30px;
   padding-bottom: 30px;
 
@@ -22,40 +24,43 @@
   align-items: center;
 
   flex-grow: 1;
-}
+`;
 
-.avatar {
+export const Avatar = styled.img`
   width: 140px;
   height: 140px;
   margin-bottom: 20px;
 
   background-color: #fcfcfc;
   border-radius: 50%;
-}
-.name {
+`;
+
+export const Name = styled.p`
   margin-bottom: 10px;
 
   font-size: 20px;
   font-weight: 700;
 
   color: #222c15;
-}
-.tag {
+`;
+
+export const Tag = styled.p`
   margin-bottom: 10px;
 
   font-size: 16px;
   font-weight: 500;
 
   color: #506630;
-}
-.location {
+`;
+
+export const Location = styled.p`
   font-size: 16px;
   font-weight: 500;
 
   color: #506630;
-}
+`;
 
-.stats {
+export const StatsList = styled.ul`
   display: flex;
 
   background-color: #94bc57;
@@ -63,9 +68,9 @@
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   box-shadow: inset 0 1px 0 0 #506630;
-}
+`;
 
-.stats li {
+export const StatsItem = styled.li`
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -74,20 +79,20 @@
   align-items: center;
 
   flex-basis: calc(100% / 3);
-}
 
-.stats li:not(:last-child) {
-  box-shadow: inset -1px 0 0 0 #506630;
-}
+  :not(:last-child) {
+    box-shadow: inset -1px 0 0 0 #506630;
+  }
+`;
 
-.label {
+export const Label = styled.span`
   font-size: 14px;
   font-weight: 500;
 
   color: #506630;
-}
+`;
 
-.quantity {
+export const Quantity = styled.span`
   font-size: 16px;
   font-weight: 700;
-}
+`;
