@@ -8,17 +8,17 @@ import {
   Percentage,
 } from './Statistics.styled';
 
-const Statistics = ({ data, title }) => {
+const Statistics = ({ stats, title }) => {
   return (
     <StatisticsSection>
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
 
       <StatList>
-        {data.map(dataItem => {
+        {stats.map(stat => {
           return (
-            <StatListItem key={dataItem.id} label={dataItem.label}>
-              <Label>{dataItem.label}</Label>
-              <Percentage>{dataItem.percentage}%</Percentage>
+            <StatListItem key={stat.id} label={stat.label}>
+              <Label>{stat.label}</Label>
+              <Percentage>{stat.percentage}%</Percentage>
             </StatListItem>
           );
         })}
@@ -28,11 +28,11 @@ const Statistics = ({ data, title }) => {
 };
 
 Statistics.propTypes = {
-  data: PropTypes.arrayOf(
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     })
   ),
   title: PropTypes.string,
